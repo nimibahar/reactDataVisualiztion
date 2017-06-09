@@ -1,12 +1,19 @@
 import React, { Component } from 'react';
-import PieChart from './PieChart.jsx';
+// import PieChart from './PieChart.jsx';
+// import StockChart from './StockChart.jsx';
+
+import ToggleGrid from './ToggleGrid.jsx';
+
 
 class App extends Component {
   render() {
     return(
-      <div style={{textAlign: 'center'}}>
-        <h1>Hello World</h1>
-        <PieChart />
+      <div>
+        {/*<PieChart />*/}
+        {/*<hr/>*/}
+        {/*<StockChart />*/}
+        {/*<hr/>*/}
+        <ToggleGrid />
       </div>
     );
   }

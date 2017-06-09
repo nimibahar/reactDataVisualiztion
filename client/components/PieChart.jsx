@@ -126,10 +126,10 @@ class PieChart extends Component {
         let pieItem = {};
         // pieItem[item.platform] = item.platform;
         pieItem.platform = item.platform
-        console.log(pieItem[item.platform])
+        // console.log(pieItem[item.platform])
         pieItem.trafficPercentage = item.trafficPercentage;
-        console.log(pieItem[item.trafficPercentage])
-        console.log(pieItem)
+        // console.log(pieItem[item.trafficPercentage])
+        // console.log(pieItem)
         return pieItem;
     });
 
