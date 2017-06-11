@@ -27,7 +27,11 @@ html, body {
   overflow: hidden;
 }
 
-.grid2x2 > div > a > .logo-medium {
+.grid2x2 > div:hover {
+  cursor: pointer;
+}
+
+.grid2x2 > div > img.logo-medium {
   height: 90%;
   width: 90%;
   position: relative;

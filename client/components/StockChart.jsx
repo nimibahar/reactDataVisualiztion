@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import Moment from 'moment';
 import ReactHighChart from 'react-highcharts';
 const ReactHighstock = require('react-highcharts/ReactHighstock');
 import _ from 'underscore';
@@ -8,9 +7,11 @@ import stocksData from '../data/exampleData2.json';
 
 class StockChart extends Component {
   render() {
+    //Creating a temp var to reference the company which we display
+    //her data on the graph
     let activeCompany = this.props.activeTechCompany;
-    {/*Getting the name, closing stock price and dates of each stock in the json file*/}
 
+    //Getting the name, closing stock price and dates of each stock in the json file
     const stocksInfo = stocksData.techStocks.map((techStock) => {
       //creating a refernce to the results array of objects which
       //from those, we will pluck properties
@@ -26,18 +27,16 @@ class StockChart extends Component {
       techStockObj.closingPrices = _.pluck(resultsArr, 'close');
       //Transforming dates to unix ** This part was experimental which didn't work
       //but was a good lesson **
-      techStockObj.closingPriceAndUnixTime = [];
+      {/*techStockObj.closingPriceAndUnixTime = [];}
       techStockObj.unixDates = techStockObj.tradingDates.map((date) => {
         return Math.round(new Date(date).getTime())
       })
       //zipping 2 arrays together
       let zippedArr = _.zip(techStockObj.unixDates, techStockObj.closingPrices);
-      techStockObj.closingPriceAndUnixTime.push(zippedArr);
+      techStockObj.closingPriceAndUnixTime.push(zippedArr);*/}
 
       return techStockObj
     });
-
-    console.log(stocksInfo[activeCompany].closingPriceAndUnixTime)
 
     const specialConfig = {
         title: {
@@ -53,7 +52,7 @@ class StockChart extends Component {
         },
         tooltip: {
           formatter: function() {
-            //assigning the
+            //assigning the x value of the tooltip to the plucked trading day value
             this.x = stocksInfo[activeCompany].tradingDates[this.x]
             return `At the date: <b> ${this.x} ${stocksInfo[activeCompany].companyName} </b> was <b> ${this.y} US$ </b>`;
           }
