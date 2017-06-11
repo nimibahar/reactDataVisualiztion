@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 // import StockChart from './StockChart.jsx';
 
 import ToggleGrid from './ToggleGrid.jsx';
-
+import PlayGround from './PlayGround.jsx';
 
 class App extends Component {
   render() {
@@ -14,6 +14,7 @@ class App extends Component {
         {/*<StockChart />*/}
         {/*<hr/>*/}
         <ToggleGrid />
+        {/*<PlayGround/>*/}
       </div>
     );
   }
